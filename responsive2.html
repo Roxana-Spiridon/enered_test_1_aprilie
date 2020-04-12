@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Responsive2</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', start);
+
+        function start() {
+            var menuButton = document.getElementById('menuButton');
+            menuButton.addEventListener('click', showMenu);
+        }
+
+        function showMenu(e) {
+            var menu = document.getElementsByTagName('nav')[0];
+            menu.style.left = 0;
+            menu.addEventListener('click', hideMenu);
+        }
+
+        function hideMenu(e) {
+            e.currentTarget.style.left = 'calc(-100% - 200px)';
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        nav {
+            min-width: 200px;
+            background-color: white;
+            border-right: 1px solid #cacaca;
+            height: 100%;
+            box-sizing: border-box;
+            transition: left 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: 1;
+        }
+
+        nav p {
+            padding-left: 12px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav p span {
+            color: yellowgreen;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 12px;
+        }
+
+        .selected {
+            background-color: #cacaca;
+        }
+
+        header {
+            background-color: #009788;
+            height: 180px;
+            padding-left: 40px;
+        }
+
+        header p {
+            margin: 0;
+            padding: 0;
+            line-height: 180px;
+            color: white;
+            font-size: 26px;
+        }
+
+        .content .description {
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+        }
+
+        .description p {
+            color: #009788;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .description p.small {
+            font-size: 18px;
+        }
+
+        .description .text {
+            margin-bottom: 40px;
+        }
+
+        .description .text .intro {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .burger-menu-icon {
+            display: none;
+            position: absolute;
+            color: white;
+            font-size: 18px;
+            line-height: 38px;
+            top: 0;
+            left: 14px;
+        }
+
+        .description .text .green-border {
+            display: inline-block;
+            border-left: 4px solid #009788;
+            padding-left: 40px;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 575px) {
+            .burger-menu-icon {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                width: 100%;
+                left: calc(-100% - 200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <p>w3schools<span>.com</span></p>
+        <ul>
+            <li class="selected">Home</li>
+            <li>Typography</li>
+            <li>Colors</li>
+            <li>Utilities</li>
+            <li>Containers</li>
+            <li>Buttons</li>
+            <li>Cards</li>
+            <li>Alerts</li>
+            <li>Accordions</li>
+            <li>Tables</li>
+        </ul>
+    </nav>
+    <div class="content">
+        <header>
+            <span id="menuButton" class="burger-menu-icon">&#9776;</span>
+            <p>W3.CSS</p>
+        </header>
+        <div class="description">
+            <div class="text">
+                <p>What is W3.CSS?</p>
+                <span class="intro">W3 CSS is a small, fast, and modern CSS framework with built-in responsiveness.</span>
+                <span class="green-border">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+            </div>
+            <div class="text">
+                <p class="small">Demo</p>
+                <span class="green-border">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

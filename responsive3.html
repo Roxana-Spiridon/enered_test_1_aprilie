@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Responsive 3</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        header .title {
+            font-weight: bold;
+            font-size: 32px;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 12px;
+            margin-left: 6px;
+        }
+
+        .content {
+            width: 100%;
+        }
+
+        .content img {
+            width: 100%;
+        }
+
+        .content .text-container {
+            display: flex;
+        }
+
+        .content .text p {
+            font-weight: bold;
+        }
+
+        .content .text span {
+            color: #363636;
+        }
+
+        .content .text-1 {
+            width: 60%;
+            padding-right: 40px;
+        }
+        .content .text-2 {
+            width: 40%;
+        }
+
+        @media screen and (max-width: 450px) {
+            header {
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+
+            header nav {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            header nav ul {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                padding: 4px;
+                background-color: #ccc;
+                margin-bottom: 2px;
+                box-sizing: border-box;
+            }
+
+            .content .text-container {
+                flex-direction: column;
+            }
+
+            .content .text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="title">DEMO</span>
+        <nav>
+            <ul>
+                <li>HOME</li>
+                <li>ABOUT</li>
+                <li>WORK</li>
+                <li>CONTACT</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <img src="responsive3-image.jpg" alt="">
+        <div class="text-container">
+            <div class="text text-1">
+                <p>Main section</p>
+                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+            </div>
+            <div class="text text-2">
+                <p>Sub-section</p>
+                <span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
